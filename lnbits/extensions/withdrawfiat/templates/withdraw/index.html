@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% from "macros.jinja" import window_vars with context
 %} {% block scripts %} {{ window_vars(user) }}
-<script src="/withdraw/static/js/index.js"></script>
+<script src="/withdrawfiat/static/js/index.js"></script>
 {% endblock %} {% block page %}
 <div class="row q-col-gutter-md">
   <div class="col-12 col-md-7 q-gutter-y-md">
@@ -62,7 +62,7 @@
                   icon="web_asset"
                   :color="($q.dark.isActive) ? 'grey-7' : 'grey-5'"
                   type="a"
-                  :href="'/withdraw/img/' + props.row.id"
+                  :href="'/withdrawfiat/img/' + props.row.id"
                   target="_blank"
                   ><q-tooltip> embeddable image </q-tooltip></q-btn
                 >
@@ -115,9 +115,9 @@
       <q-card-section class="q-pa-none">
         <q-separator></q-separator>
         <q-list>
-          {% include "withdraw/_api_docs.html" %}
+          {% include "withdrawfiat/_api_docs.html" %}
           <q-separator></q-separator>
-          {% include "withdraw/_lnurl.html" %}
+          {% include "withdrawfiat/_lnurl.html" %}
         </q-list>
       </q-card-section>
     </q-card>

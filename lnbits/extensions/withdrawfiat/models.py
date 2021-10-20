@@ -15,7 +15,7 @@ class WithdrawLink(NamedTuple):
     unique_hash: str
     k1: str
     used: int
-    settledMSats: int
+    settled_msats: int
     
     @classmethod
     def from_row(cls, row: Row) -> "WithdrawLink":

@@ -12,7 +12,7 @@
   >
     <q-card>
       <q-card-section>
-        <code><span class="text-blue">GET</span> /withdraw/api/v1/links</code>
+        <code><span class="text-blue">GET</span> /withdrawfiat/api/v1/links</code>
         <h5 class="text-caption q-mt-sm q-mb-none">Headers</h5>
         <code>{"X-Api-Key": &lt;invoice_key&gt;}</code><br />
         <h5 class="text-caption q-mt-sm q-mb-none">Body (application/json)</h5>
@@ -38,7 +38,7 @@
       <q-card-section>
         <code
           ><span class="text-blue">GET</span>
-          /withdraw/api/v1/links/&lt;withdraw_id&gt;</code
+          /withdrawfiat/api/v1/links/&lt;withdraw_id&gt;</code
         >
         <h5 class="text-caption q-mt-sm q-mb-none">Headers</h5>
         <code>{"X-Api-Key": &lt;invoice_key&gt;}</code><br />
@@ -63,7 +63,7 @@
   >
     <q-card>
       <q-card-section>
-        <code><span class="text-green">POST</span> /withdraw/api/v1/links</code>
+        <code><span class="text-green">POST</span> /withdrawfiat/api/v1/links</code>
         <h5 class="text-caption q-mt-sm q-mb-none">Headers</h5>
         <code>{"X-Api-Key": &lt;admin_key&gt;}</code><br />
         <h5 class="text-caption q-mt-sm q-mb-none">Body (application/json)</h5>
@@ -96,7 +96,7 @@
       <q-card-section>
         <code
           ><span class="text-pink">DELETE</span>
-          /withdraw/api/v1/links/&lt;withdraw_id&gt;</code
+          /withdrawfiat/api/v1/links/&lt;withdraw_id&gt;</code
         >
         <h5 class="text-caption q-mt-sm q-mb-none">Headers</h5>
         <code>{"X-Api-Key": &lt;admin_key&gt;}</code><br />
@@ -120,7 +120,7 @@
       <q-card-section>
         <code
           ><span class="text-blue">GET</span>
-          /withdraw/api/v1/links/&lt;the_hash&gt;/&lt;lnurl_id&gt;</code
+          /withdrawfiat/api/v1/links/&lt;the_hash&gt;/&lt;lnurl_id&gt;</code
         >
         <h5 class="text-caption q-mt-sm q-mb-none">Headers</h5>
         <code>{"X-Api-Key": &lt;invoice_key&gt;}</code><br />
@@ -149,11 +149,11 @@
       <q-card-section>
         <code
           ><span class="text-blue">GET</span>
-          /withdraw/img/&lt;lnurl_id&gt;</code
+          /withdrawfiat/img/&lt;lnurl_id&gt;</code
         >
         <h5 class="text-caption q-mt-sm q-mb-none">Curl example</h5>
         <code
-          >curl -X GET {{ request.url_root }}/withdraw/img/&lt;lnurl_id&gt;"
+          >curl -X GET {{ request.url_root }}/withdrawfiat/img/&lt;lnurl_id&gt;"
         </code>
       </q-card-section>
     </q-card>

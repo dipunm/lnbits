@@ -73,7 +73,7 @@ new Vue({
       LNbits.api
         .request(
           'GET',
-          '/withdraw/api/v1/links?all_wallets',
+          '/withdrawfiat/api/v1/links?all_wallets',
           this.g.user.wallets[0].inkey
         )
         .then(function (response) {
@@ -113,7 +113,7 @@ new Vue({
       var self = this
 
       LNbits.api
-        .request('POST', '/withdraw/api/v1/links', wallet.adminkey, data)
+        .request('POST', '/withdrawfiat/api/v1/links', wallet.adminkey, data)
         .then(function (response) {
           self.withdrawLinks.push(mapWithdrawLink(response.data))
           self.formDialog.show = false
@@ -132,7 +132,7 @@ new Vue({
           LNbits.api
             .request(
               'DELETE',
-              '/withdraw/api/v1/links/' + linkId,
+              '/withdrawfiat/api/v1/links/' + linkId,
               _.findWhere(self.g.user.wallets, {id: link.wallet}).adminkey
             )
             .then(function (response) {
