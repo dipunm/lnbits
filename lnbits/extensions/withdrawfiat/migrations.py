@@ -4,7 +4,7 @@ async def m001_initial(db):
     """
     await db.execute(
         """
-        CREATE TABLE withdraw.withdraw_link (
+        CREATE TABLE withdrawfiat.withdraw_link (
             id TEXT PRIMARY KEY,
             wallet TEXT,
             title TEXT,
@@ -26,7 +26,7 @@ async def m003_make_hash_check(db):
     """
     await db.execute(
         """
-        CREATE TABLE withdraw.hash_check (
+        CREATE TABLE withdrawfiat.hash_check (
             id TEXT PRIMARY KEY,
             lnurl_id TEXT
         );
