@@ -38,7 +38,7 @@ class WithdrawLink(NamedTuple):
 
     def lnurl_response(self, sats) -> LnurlWithdrawResponse:
         url = url_for(
-            "withdraw.api_lnurl_callback", unique_hash=self.unique_hash, _external=True
+            "withdrawfiat.api_lnurl_callback", unique_hash=self.unique_hash, _external=True
         )
         
         return LnurlWithdrawResponse(
