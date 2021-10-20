@@ -49,7 +49,7 @@ async def api_links():
 @withdrawfiat_ext.route("/api/v1/links/<link_id>", methods=["GET"])
 @api_check_wallet_key("invoice")
 async def api_link_retrieve(link_id):
-    link = await get_withdraw_link(link_id, 0)
+    link = await get_withdraw_link(link_id)
 
     if not link:
         return (

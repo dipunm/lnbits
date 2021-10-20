@@ -17,7 +17,7 @@ async def index():
 
 @withdrawfiat_ext.route("/<link_id>")
 async def display(link_id):
-    link = await get_withdraw_link(link_id, 0) or abort(
+    link = await get_withdraw_link(link_id) or abort(
         HTTPStatus.NOT_FOUND, "Withdraw link does not exist."
     )
     return await render_template("withdrawfiat/display.html", link=link, unique=True)
@@ -25,7 +25,7 @@ async def display(link_id):
 
 @withdrawfiat_ext.route("/img/<link_id>")
 async def img(link_id):
-    link = await get_withdraw_link(link_id, 0) or abort(
+    link = await get_withdraw_link(link_id) or abort(
         HTTPStatus.NOT_FOUND, "Withdraw link does not exist."
     )
     qr = pyqrcode.create(link.lnurl)

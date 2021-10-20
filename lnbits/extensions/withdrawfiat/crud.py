@@ -40,12 +40,12 @@ async def create_withdraw_link(
             urlsafe_short_hash(),
         ),
     )
-    link = await get_withdraw_link(link_id, 0)
+    link = await get_withdraw_link(link_id)
     assert link, "Newly created link couldn't be retrieved"
     return link
 
 
-async def get_withdraw_link(link_id: str, num=0) -> Optional[WithdrawLink]:
+async def get_withdraw_link(link_id: str) -> Optional[WithdrawLink]:
     row = await db.fetchone(
         "SELECT * FROM withdrawfiat.withdraw_link WHERE id = ?", (link_id,)
     )
@@ -55,11 +55,10 @@ async def get_withdraw_link(link_id: str, num=0) -> Optional[WithdrawLink]:
     link = []
     for item in row:
         link.append(item)
-    link.append(num)
     return WithdrawLink._make(link)
 
 
-async def get_withdraw_link_by_hash(unique_hash: str, num=0) -> Optional[WithdrawLink]:
+async def get_withdraw_link_by_hash(unique_hash: str) -> Optional[WithdrawLink]:
     row = await db.fetchone(
         "SELECT * FROM withdrawfiat.withdraw_link WHERE unique_hash = ?", (unique_hash,)
     )
@@ -69,7 +68,6 @@ async def get_withdraw_link_by_hash(unique_hash: str, num=0) -> Optional[Withdra
     link = []
     for item in row:
         link.append(item)
-    link.append(num)
     return WithdrawLink._make(link)
 
 
