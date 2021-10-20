@@ -10,7 +10,7 @@ async def m001_initial(db):
             title TEXT,
             currency TEXT NOT NULL,
             amount FLOAT NOT NULL,
-            max_satoshis INTEGER NOT NULL,
+            max_satoshis INTEGER DEFAULT 0,
             unique_hash TEXT UNIQUE,
             k1 TEXT,
             used INTEGER DEFAULT 0,

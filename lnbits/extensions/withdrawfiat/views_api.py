@@ -70,7 +70,6 @@ async def api_link_retrieve(link_id):
         "title": {"type": "string", "empty": False, "required": True},
         "currency": {"type": "string", "empty": False, "required": True},
         "amount": {"type": "float", "min": 0, "required": True},
-        "max_satoshis": {"type": "integer", "min": 1, "required": True},
     }
 )
 async def api_link_create_or_update():

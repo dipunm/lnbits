@@ -12,7 +12,6 @@ async def create_withdraw_link(
     title: str,
     currency: str,
     amount: float,
-    max_satoshis: int,
 ) -> WithdrawLink:
     link_id = urlsafe_short_hash()
     await db.execute(
@@ -23,11 +22,10 @@ async def create_withdraw_link(
             title,
             currency,
             amount,
-            max_satoshis,
             unique_hash,
             k1
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
         """,
         (
             link_id,
@@ -35,7 +33,6 @@ async def create_withdraw_link(
             title,
             currency,
             amount,
-            max_satoshis,
             urlsafe_short_hash(),
             urlsafe_short_hash(),
         ),

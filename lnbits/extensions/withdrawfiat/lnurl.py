@@ -29,6 +29,10 @@ async def api_lnurl_response(unique_hash):
         )
 
     sats = await fiat_amount_as_satoshis(link.amount, link.currency)
+    changes = {
+        "max_satoshis": sats
+    }
+    await update_withdraw_link(link.id, **changes)
     return jsonify(link.lnurl_response(sats).dict()), HTTPStatus.OK
 
 

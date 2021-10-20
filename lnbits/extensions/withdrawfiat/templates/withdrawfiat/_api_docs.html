@@ -69,7 +69,7 @@
         <h5 class="text-caption q-mt-sm q-mb-none">Body (application/json)</h5>
         <code
           >{"title": &lt;string&gt;, "currency": &lt;string&gt;,
-          "amount": &lt;float&gt;, "max_satoshis": &lt;int&gt;}</code
+          "amount": &lt;float&gt;}</code
         >
         <h5 class="text-caption q-mt-sm q-mb-none">
           Returns 201 CREATED (application/json)
@@ -79,7 +79,7 @@
         <code
           >curl -X POST {{ request.url_root }}api/v1/links -d '{"title":
           &lt;string&gt;, "currency": &lt;string&gt;,
-          "amount": &lt;float&gt;, "max_satoshis": &lt;int&gt;}' -H
+          "amount": &lt;float&gt;}' -H
           "Content-type: application/json" -H "X-Api-Key: {{
           g.user.wallets[0].adminkey }}"
         </code>

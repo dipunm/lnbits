@@ -28,6 +28,7 @@ new Vue({
     return {
       checker: null,
       withdrawLinks: [],
+      currency: 'USD',
       withdrawLinksTable: {
         columns: [
           {name: 'id', align: 'left', label: 'ID', field: 'id'},
@@ -38,7 +39,6 @@ new Vue({
             label: 'Used',
             field: 'used'
           },
-          {name: 'max_satoshis', align: 'right', label: 'max (sat)', field: 'max_satoshis'},
           {name: 'settled_sats', align: 'right', label: 'Settled (sat)', field: 'settled_sats'},
         ],
         pagination: {
@@ -156,6 +156,15 @@ new Vue({
       this.checker = setInterval(function () {
         getWithdrawLinks()
       }, 20000)
+      
+      LNbits.api
+        .request('GET', '/api/v1/currencies')
+        .then(response => {
+          this.currency = ['USD', ...response.data]
+        })
+        .catch(err => {
+          LNbits.utils.notifyApiError(err)
+        })
     }
   }
 })

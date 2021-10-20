@@ -142,26 +142,20 @@
           type="text"
           label="Link title *"
         ></q-input>
-        <q-input
+        <q-select
           filled
           dense
-          v-model.number="formDialog.data.currency"
+          v-model.trim="formDialog.data.currency"
           type="text"
-          label="Currency *"
-        ></q-input>
+          label="Fiat currency *"
+          :options="currency"
+        ></q-select>
         <q-input
           filled
           dense
           v-model.number="formDialog.data.amount"
           type="number"
           label="Amount *"
-        ></q-input>
-        <q-input
-          filled
-          dense
-          v-model.number="formDialog.data.max_satoshis"
-          type="number"
-          label="Max Satoshis *"
         ></q-input>
         
         <div class="row q-mt-lg">
@@ -172,7 +166,6 @@
                 formDialog.data.wallet == null ||
                 formDialog.data.title == null ||
                 formDialog.data.currency == null ||
-                formDialog.data.max_satoshis == null ||
                 formDialog.data.amount == null"
             type="submit"
             >Create withdraw link</q-btn
