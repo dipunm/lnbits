@@ -1,0 +1,6 @@
+{
+  "name": "LNURLwfiat",
+  "short_description": "Make LNURL withdraw links in fiat",
+  "icon": "crop_free",
+  "contributors": ["dipun"]
+}
