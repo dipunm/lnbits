@@ -29,7 +29,7 @@ class WithdrawLink(NamedTuple):
     @property
     def lnurl(self) -> Lnurl:
         url = url_for(
-            "withdraw.api_lnurl_response",
+            "withdrawfiat.api_lnurl_response",
             unique_hash=self.unique_hash,
             _external=True,
         )
