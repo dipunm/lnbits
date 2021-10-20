@@ -27,7 +27,7 @@ async def create_withdraw_link(
             unique_hash,
             k1
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             link_id,
