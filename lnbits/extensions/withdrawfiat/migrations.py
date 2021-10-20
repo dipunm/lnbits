@@ -14,7 +14,7 @@ async def m001_initial(db):
             unique_hash TEXT UNIQUE,
             k1 TEXT,
             used INTEGER DEFAULT 0,
-            settled_msats INTEGER,
+            settled_msats INTEGER
         );
         """
     )
