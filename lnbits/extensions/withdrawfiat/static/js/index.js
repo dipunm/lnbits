@@ -34,10 +34,16 @@ new Vue({
           {name: 'id', align: 'left', label: 'ID', field: 'id'},
           {name: 'title', align: 'left', label: 'Title', field: 'title'},
           {
-            name: 'used',
+            name: 'amount',
             align: 'right',
-            label: 'Used',
-            field: 'used'
+            label: 'Amount',
+            field: 'amount'
+          },
+          {
+            name: 'currency',
+            align: 'left',
+            label: 'Currency',
+            field: 'currency'
           },
           {name: 'settled_sats', align: 'right', label: 'Settled (sat)', field: 'settled_sats'},
         ],
